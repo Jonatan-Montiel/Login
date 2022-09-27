@@ -6,7 +6,7 @@ $password=$_POST['password'];
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("udljjmm.database.windows.net,1433","jonatanmontiel","b3Ka120114MOMj950930","udl");
+$conexion=mysqli_connect("sqlsrv:server = tcp:udljjmm.database.windows.net,1433","jonatanmontiel","b3Ka120114MOMj950930","udl");
 
 //Inicio Seguridad media
 $usuario = mysqli_real_escape_string($conexion, $usuario);
