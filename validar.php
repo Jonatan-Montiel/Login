@@ -7,8 +7,7 @@ session_start();
 $_SESSION['usuario']=$usuario;
 
 $con = mysqli_init(); 
-mysqli_ssl_set($con,NULL,NULL, "/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
-mysqli_real_connect($conn, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL);
+mysqli_real_connect($conn, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306);
 
 
 $usuario = mysqli_real_escape_string($conexion, $usuario);
