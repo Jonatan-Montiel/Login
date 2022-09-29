@@ -11,13 +11,9 @@ mysqli_ssl_set($con,NULL,NULL, "/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL);
 mysqli_real_connect($conn, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL);
 
 
-//Inicio Seguridad media
 $usuario = mysqli_real_escape_string($conexion, $usuario);
 $password = mysqli_real_escape_string($conexion, $password);
-//Termina seguridad media
 
-// $consulta="SELECT * FROM usuarios where usuario='$usuario' and pass='$password' limit 1";
-// $resultado=mysqli_query($conexion,$consulta);
 
 $consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
 mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); //ss = string string
