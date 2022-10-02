@@ -7,6 +7,7 @@ session_start();
 $_SESSION['usuario']=$usuario;
 
 $conexion=mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306);
+// $conexion=mysqli_connect("localhost", "root", "", "login");
 
 $usuario = mysqli_real_escape_string($conexion, $usuario);
 $password = mysqli_real_escape_string($conexion, $password);
