@@ -6,7 +6,8 @@ $password=$_POST['password'];
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306);
+mysqli_ssl_set($con,NULL,NULL, "/DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+$conexion=mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL);
 // $conexion=mysqli_connect("localhost", "root", "", "login");
 
 $usuario = mysqli_real_escape_string($conexion, $usuario);
