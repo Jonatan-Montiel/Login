@@ -15,7 +15,7 @@ $_SESSION['usuario']=$usuario;
 // }
 // mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
 // $conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL);
-$conn = mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306);
+$conn = mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1");
 if (!$conn) {
     die("Conexion fallida: " . mysqli_connect_error());
 }
