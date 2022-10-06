@@ -10,15 +10,19 @@ session_start();
 $_SESSION['usuario']=$usuario;
 
 $conexion = mysqli_init();
-// mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
-mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
-
-// $conexion=mysqli_real_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
-
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo $conexion;
+// mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
+$conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+
+if (!$conn) {
+    die("Conexion fallida: " . mysqli_connect_error());
+}
+
+// $conexion=mysqli_real_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+
+
 // $query = "SELECT * FROM usuarios";
 
 // $resultado=mysqli_query($conexion, $query);
