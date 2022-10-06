@@ -19,7 +19,7 @@ if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "SELECT * FROM usuarios WHERE usuario='$usuario' and pass='$password'";
+$query = "SELECT * FROM usuarios";
 
 $resultado=mysqli_query($conexion, $query);
 echo "Error:" .$resultado;
