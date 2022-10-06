@@ -9,15 +9,15 @@ $password= '120114';
 session_start();
 $_SESSION['usuario']=$usuario;
 
-// $conexion = mysqli_init();
+$conexion = mysqli_init();
 // if (!$conexion) {
 //     die("Connection failed: " . mysqli_connect_error());
 // }
 // mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
-// $conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL);
-$conn = mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontie", "b3Ka12114MOMj95093", "bdudl1");
+$conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka12114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+// $conn = mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontie", "b3Ka12114MOMj95093", "bdudl1");
 if (!$conn) {
-    die("Conexion fallida: " . mysqli_connect_error());
+    die("Conexion fallida2: " . mysqli_connect_error());
 }
 
 // $conexion=mysqli_real_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", 3306, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
