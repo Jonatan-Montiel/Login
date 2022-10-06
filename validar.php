@@ -18,7 +18,7 @@ mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmont
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
+echo "Conexion: ".$conexion;
 $query = "SELECT * FROM usuarios";
 
 $resultado=mysqli_query($conexion, $query);
