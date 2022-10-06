@@ -19,29 +19,34 @@ if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$usuario = mysqli_real_escape_string($conexion, $usuario);
-$password = mysqli_real_escape_string($conexion, $password);
+$query = "SELECT * FROM usuarios WHERE usuario='$usuario' and pass='$password'";
+
+$resultado=mysqli_query($conexion, $query);
+echo "Error:" .$resultado;
+
+// $usuario = mysqli_real_escape_string($conexion, $usuario);
+// $password = mysqli_real_escape_string($conexion, $password);
 
 
-$consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
-mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); 
-echo "Error:".$consulta;
-mysqli_stmt_execute($consulta);
-$resultado = mysqli_stmt_get_result($consulta);
+// $consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
+// mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); 
+// echo "Error:".$consulta;
+// mysqli_stmt_execute($consulta);
+// $resultado = mysqli_stmt_get_result($consulta);
 
 
-$filas=mysqli_num_rows($resultado);
+// $filas=mysqli_num_rows($resultado);
 
-if($filas){
-    header("location:galeria.html");
-}else{
-    ?>
-    <?php
-    include("index.html");
-    ?>
-    echo <script> alert("Usuario o contraseña incorrectos"); </script>;
-    <?php
-}
+// if($filas){
+//     header("location:galeria.html");
+// }else{
+//     ?>
+//     <?php
+//     include("index.html");
+//     ?>
+//     echo <script> alert("Usuario o contraseña incorrectos"); </script>;
+//     <?php
+// }
 
-mysqli_free_result($resultado);
+// mysqli_free_result($resultado);
 mysqli_close($conexion);
