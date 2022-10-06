@@ -22,7 +22,7 @@ if (!$conexion) {
 $query = "SELECT * FROM usuarios";
 
 $resultado=mysqli_query($conexion, $query);
-echo "Error:" .$resultado;
+echo "Error:" .mysqli_num_rows($resultado);
 echo "Query:" .$query;
 
 // $usuario = mysqli_real_escape_string($conexion, $usuario);
