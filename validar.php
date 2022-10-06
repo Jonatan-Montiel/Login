@@ -19,23 +19,23 @@ if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "SELECT * FROM usuarios";
+// $query = "SELECT * FROM usuarios";
 
-$resultado=mysqli_query($conexion, $query);
-echo "Error:";
-mysqli_num_rows($resultado);
-print_r($resultado);
-echo "Query:" .$query;
+// $resultado=mysqli_query($conexion, $query);
+// echo "Error:";
+// mysqli_num_rows($resultado);
+// print_r($resultado);
+// echo "Query:" .$query;
 
 // $usuario = mysqli_real_escape_string($conexion, $usuario);
 // $password = mysqli_real_escape_string($conexion, $password);
 
 
-// $consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
-// mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); 
-// echo "Error:".$consulta;
-// mysqli_stmt_execute($consulta);
-// $resultado = mysqli_stmt_get_result($consulta);
+$consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
+mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); 
+mysqli_stmt_execute($consulta);
+$resultado = mysqli_stmt_get_result($consulta);
+echo "Error:".$consulta;
 
 
 // $filas=mysqli_num_rows($resultado);
