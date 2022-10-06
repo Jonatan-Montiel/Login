@@ -9,13 +9,13 @@ $password= '120114';
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion = mysqli_init();
-if (!$conexion) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// $conexion = mysqli_init();
+// if (!$conexion) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
 // mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
-$conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL);
-
+// $conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL);
+$conn = mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306);
 if (!$conn) {
     die("Conexion fallida: " . mysqli_connect_error());
 }
