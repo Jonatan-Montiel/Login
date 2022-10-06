@@ -1,7 +1,10 @@
 <?php
 
-$usuario=$_POST['usuario'];
-$password=$_POST['password'];
+// $usuario=$_POST['usuario'];
+// $password=$_POST['password'];
+
+$usuario= 'jonatan';
+$password= '120114';
 
 session_start();
 $_SESSION['usuario']=$usuario;
