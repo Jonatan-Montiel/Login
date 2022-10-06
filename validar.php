@@ -22,10 +22,10 @@ if (!$conexion) {
 $usuario = mysqli_real_escape_string($conexion, $usuario);
 $password = mysqli_real_escape_string($conexion, $password);
 
-$query = "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?";
 
-$consulta = mysqli_prepare($conexion, $query);
+$consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
 mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); 
+echo "Error:".$consulta;
 mysqli_stmt_execute($consulta);
 $resultado = mysqli_stmt_get_result($consulta);
 
