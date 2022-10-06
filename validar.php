@@ -9,7 +9,7 @@ $password= '120114';
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1");
+$conexion=mysqli_real_connect("udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka120114MOMj950930", "bdudl1", MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
 
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
