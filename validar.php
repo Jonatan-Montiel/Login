@@ -14,7 +14,7 @@ if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());
 }
 // mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
-$conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
+$conn = mysqli_real_connect($conexion, "udlsqlbd.mysql.database.azure.com", "jonatanmontiel@20.118.40.4", "b3Ka12114MOMj950930", "bdudl1", 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);
 
 if (!$conn) {
     die("Conexion fallida: " . mysqli_connect_error());
