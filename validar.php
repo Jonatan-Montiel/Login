@@ -23,6 +23,7 @@ $query = "SELECT * FROM usuarios WHERE usuario='$usuario' and pass='$password'";
 
 $resultado=mysqli_query($conexion, $query);
 echo "Error:" .$resultado;
+echo "Query:" .$query;
 
 // $usuario = mysqli_real_escape_string($conexion, $usuario);
 // $password = mysqli_real_escape_string($conexion, $password);
