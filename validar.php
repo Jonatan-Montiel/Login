@@ -8,8 +8,15 @@ $_SESSION['usuario']=$usuario;
 
 $conexion=mysqli_connect("35.193.109.252","root","b3Ka120114MOMj950930","bdCloud");
 
-$consulta="SELECT*FROM usuarios where usuario='$usuario' and pass='$password'";
-$resultado=mysqli_query($conexion,$consulta);
+$usuario = mysqli_real_escape_string($conexion, $usuario);
+$password = mysqli_real_escape_string($conexion, $password);
+
+
+$consulta = mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usuario = ? AND pass = ?");
+mysqli_stmt_bind_param($consulta, "ss", $usuario, $password); //ss = string string
+mysqli_stmt_execute($consulta);
+$resultado = mysqli_stmt_get_result($consulta);
+
 
 $filas=mysqli_num_rows($resultado);
 
